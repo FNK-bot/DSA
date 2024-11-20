@@ -20,3 +20,5 @@ function quickSort(arr) {
 let arr = [-9, 5, 8, 3, 60, -9];
 arr = quickSort(arr);
 console.log(arr)
+//O(n^2) --- worst
+//O(n log n) --- avg case

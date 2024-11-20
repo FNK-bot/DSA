@@ -32,7 +32,6 @@ class Queue {
         // console.log(Object.values(this.items))
         let res = []
         for (let key in this.items) {
-            console.log(key)
             res.push(this.items[key])
         };
         console.log(res)
