@@ -2,24 +2,35 @@
 
 class Stack {
     constructor() {
-        this.head = 0;
-        this.stack = []
+        this.items = []
+    }
+
+    getSize() {
+        return this.items.length
     }
 
     push(elemet) {
-        this.stack[this.head] = elemet;
-        this.head++
-    }
-
-    pop() {
-        let elemet = this.stack[this.head];
-        this.stack[this.head] = undefined;
-        this.head--
-        return elemet;
+        this.items.push(elemet)
     };
 
+    pop() {
+        if (this.getSize == 0) {
+            return console.log('Underflow')
+        }
+        this.items.pop()
+    }
+
+    isEmpty() {
+        return this.getSize() === 0;
+    }
+    peek() {
+        if (this.getSize() == 0) {
+            return console.log('Underflow')
+        }
+        console.log(this.items[this.getSize() - 1])
+    }
     display() {
-        console.log(this.stack)
+        console.log(this.items)
     }
 }
 
@@ -29,6 +40,10 @@ myStack.push(50);
 myStack.push(51);
 myStack.push(52);
 myStack.display();
-
+myStack.peek()
+myStack.pop();
+myStack.pop();
 myStack.pop();
 myStack.display()
+
+myStack.peek()
